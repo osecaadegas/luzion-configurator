@@ -1,4 +1,4 @@
-import { createAdminClient } from "@/lib/supabase/server";
+import { createClient } from "@supabase/supabase-js";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Monitor } from "lucide-react";
 import DevicesMapClient from "@/components/admin/DevicesMapClient";
@@ -8,7 +8,10 @@ export const metadata: Metadata = { title: "Kiosk Devices — Luzion Admin" };
 export const revalidate = 0;
 
 async function getDevices() {
-  const supabase = await createAdminClient();
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
   const { data } = await supabase
     .from("kiosk_devices")
     .select("id, device_id, hostname, ip_v4, ip_v6, city, region, country, lat, lng, gpu, screen_res, os_name, os_version, app_version, first_seen, last_seen")
