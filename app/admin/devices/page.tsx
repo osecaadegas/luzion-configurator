@@ -57,7 +57,7 @@ export default async function DevicesPage() {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0 overflow-hidden rounded-b-lg">
-          <DevicesMapClient devices={devices} />
+          <DevicesMapClient devices={devices.map((d) => ({ id: d.id, hostname: d.hostname, ip_v4: d.ip_v4, city: d.city, region: d.region, country: d.country, lat: d.lat, lng: d.lng, last_seen: d.last_seen }))} />
         </CardContent>
       </Card>
 

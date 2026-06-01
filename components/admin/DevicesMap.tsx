@@ -19,10 +19,19 @@ export default function DevicesMap({ devices }: { devices: Device[] }) {
   const mapInstance = useRef<unknown>(null);
 
   useEffect(() => {
-    if (!mapRef.current || mapInstance.current) return;
+    if (!mapRef.current) return;
+    // Guard against Strict Mode double-mount or HMR: if container already has a map, remove it first
+    const container = mapRef.current as HTMLDivElement & { _leaflet_id?: number };
+    if (container._leaflet_id) return;
+
+    let cancelled = false;
 
     // Leaflet must be imported client-side only
     import("leaflet").then((L) => {
+      if (cancelled || !mapRef.current) return;
+      // Re-check after async import in case container was already initialised
+      const c = mapRef.current as HTMLDivElement & { _leaflet_id?: number };
+      if (c._leaflet_id) return;
       // Fix default marker icon path issue with webpack/Next.js
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -64,6 +73,7 @@ export default function DevicesMap({ devices }: { devices: Device[] }) {
     });
 
     return () => {
+      cancelled = true;
       if (mapInstance.current) {
         (mapInstance.current as { remove: () => void }).remove();
         mapInstance.current = null;
