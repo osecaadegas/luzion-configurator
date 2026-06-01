@@ -4,12 +4,12 @@ A production-ready 2D vehicle configurator showroom for the **Luzion** microcar 
 
 ## Features
 
-- **Vehicle catalog** — browsable grid of models with specs and colour previews
-- **2D configurator** — four views (front / side / rear / interior), colour swatches, wheel options, interior trims, live price summary
-- **Share & QR** — any configuration can be saved and shared via a short URL or QR code
-- **Comparison mode** — side-by-side spec table for up to two vehicles
-- **Lead capture** — modal form that posts a qualified lead into the database
-- **Admin panel** — password-protected dashboard with vehicle CRUD, image upload, and leads management
+- **Vehicle catalog** ï¿½ browsable grid of models with specs and colour previews
+- **2D configurator** ï¿½ four views (front / side / rear / interior), colour swatches, wheel options, interior trims, live price summary
+- **Share & QR** ï¿½ any configuration can be saved and shared via a short URL or QR code
+- **Comparison mode** ï¿½ side-by-side spec table for up to two vehicles
+- **Lead capture** ï¿½ modal form that posts a qualified lead into the database
+- **Admin panel** ï¿½ password-protected dashboard with vehicle CRUD, image upload, and leads management
 
 ---
 
@@ -117,4 +117,4 @@ The vercel.json configures the cdg1 (Paris) region and disables caching for /api
 
 ## Licence
 
-Proprietary — all rights reserved.
+Proprietary ï¿½ all rights reserved.

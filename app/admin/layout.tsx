@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { LayoutDashboard, Car, Users, LogOut } from "lucide-react";
+import { LayoutDashboard, Car, Users, Monitor, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -9,6 +9,7 @@ const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/vehicles", label: "Vehicles", icon: Car },
   { href: "/admin/leads", label: "Leads", icon: Users },
+  { href: "/admin/devices", label: "Devices", icon: Monitor },
 ];
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
