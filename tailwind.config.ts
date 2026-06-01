@@ -52,13 +52,13 @@ const config: Config = {
         },
         // Luzion brand colors
         luzion: {
-          black: "#0A0A0A",
-          white: "#FAFAFA",
-          silver: "#C8C8C8",
-          graphite: "#2A2A2A",
-          charcoal: "#1A1A1A",
-          accent: "#E8D5B0", // warm champagne accent
-          "accent-dark": "#C4A96B",
+          navy: "#0A1628",        // deep midnight navy
+          white: "#F5F8FF",        // cool blue-tinted white
+          steel: "#8AACCC",        // mid steel blue
+          slate: "#1A2D42",        // dark slate blue
+          midnight: "#0D1B2E",     // deepest midnight
+          accent: "#2563EB",       // brand electric blue
+          "accent-light": "#60A5FA", // sky blue
         },
       },
       fontFamily: {

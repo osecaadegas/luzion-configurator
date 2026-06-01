@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-luzion-charcoal text-white py-20 md:py-32">
+    <section className="relative overflow-hidden bg-luzion-midnight text-white py-20 md:py-32">
       {/* Background texture */}
       <div
         className="absolute inset-0 opacity-5"
@@ -17,7 +17,7 @@ export function HeroSection() {
 
       <div className="container relative z-10">
         <div className="max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-luzion-silver mb-6">
+          <p className="text-xs uppercase tracking-[0.3em] text-luzion-steel mb-6">
             Premium Urban Mobility
           </p>
           <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight mb-6">
@@ -25,7 +25,7 @@ export function HeroSection() {
             <br />
             <span className="font-semibold">Your Luzion</span>
           </h1>
-          <p className="text-lg md:text-xl text-luzion-silver max-w-xl leading-relaxed mb-10">
+          <p className="text-lg md:text-xl text-luzion-steel max-w-xl leading-relaxed mb-10">
             Personalise every detail of your microcar. Choose your colour, wheels,
             and interior to create the perfect vehicle for your city.
           </p>
