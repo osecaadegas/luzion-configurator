@@ -7,7 +7,7 @@ const supabase = createClient(
 );
 
 export async function POST(req: NextRequest) {
-  let body: Record<string, string>;
+  let body: Record<string, string | number | null>;
   try {
     body = await req.json();
   } catch {
@@ -15,11 +15,31 @@ export async function POST(req: NextRequest) {
   }
 
   const { device_id, hostname, gpu, screen_res, os_name, os_version, app_version, ip_v6 } = body;
+  const precise = req.nextUrl.searchParams.get("precise") === "1";
 
   if (!device_id) {
     return NextResponse.json({ error: "missing device_id" }, { status: 400 });
   }
 
+  // ── Precise GPS update from the Electron geolocation API ─────────────────
+  if (precise) {
+    const lat = typeof body.lat === "number" ? body.lat : null;
+    const lng = typeof body.lng === "number" ? body.lng : null;
+    if (lat == null || lng == null) {
+      return NextResponse.json({ error: "missing lat/lng" }, { status: 400 });
+    }
+    const { error } = await supabase
+      .from("kiosk_devices")
+      .update({ lat, lng, last_seen: new Date().toISOString() })
+      .eq("device_id", device_id);
+    if (error) {
+      console.error("[kiosk/register precise]", error.message);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+    return NextResponse.json({ ok: true });
+  }
+
+  // ── Initial registration with IP geolocation ──────────────────────────────
   // Extract real IP from Vercel / proxy headers
   const forwarded = req.headers.get("x-forwarded-for");
   const ip_v4 = forwarded ? forwarded.split(",")[0].trim() : "unknown";
