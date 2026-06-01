@@ -1,14 +1,11 @@
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Monitor } from "lucide-react";
-import dynamic from "next/dynamic";
+import DevicesMapClient from "@/components/admin/DevicesMapClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Kiosk Devices — Luzion Admin" };
 export const revalidate = 0;
-
-// Load map only on client (Leaflet requires browser APIs)
-const DevicesMap = dynamic(() => import("@/components/admin/DevicesMap"), { ssr: false });
 
 async function getDevices() {
   const supabase = await createClient();
@@ -60,7 +57,7 @@ export default async function DevicesPage() {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0 overflow-hidden rounded-b-lg">
-          <DevicesMap devices={devices} />
+          <DevicesMapClient devices={devices} />
         </CardContent>
       </Card>
 
