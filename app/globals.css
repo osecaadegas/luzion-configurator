@@ -24,46 +24,57 @@
 }
 
 .dark {
-  --background: 222 60% 5%;
-  --foreground: 215 25% 93%;
-  --card: 220 52% 8%;
-  --card-foreground: 215 25% 93%;
-  --popover: 220 52% 8%;
-  --popover-foreground: 215 25% 93%;
-  --primary: 215 25% 93%;
-  --primary-foreground: 222 60% 5%;
-  --secondary: 220 42% 13%;
-  --secondary-foreground: 215 25% 93%;
-  --muted: 220 42% 13%;
-  --muted-foreground: 215 22% 60%;
-  --accent: 217 40% 18%;
-  --accent-foreground: 215 25% 93%;
+  /* #011834 */
+  --background: 213 97% 10%;
+  /* #cfe6ff */
+  --foreground: 210 100% 91%;
+  /* #012147 */
+  --card: 214 97% 14%;
+  --card-foreground: 210 100% 91%;
+  --popover: 214 97% 14%;
+  --popover-foreground: 210 100% 91%;
+  /* #4fa7ff — sky blue for primary actions */
+  --primary: 211 100% 65%;
+  --primary-foreground: 213 97% 8%;
+  /* #012a5e */
+  --secondary: 214 97% 18%;
+  --secondary-foreground: 210 100% 91%;
+  --muted: 214 97% 18%;
+  /* #7aafff */
+  --muted-foreground: 213 100% 74%;
+  /* #013467 subtle blue hover */
+  --accent: 214 96% 21%;
+  --accent-foreground: 210 100% 91%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 98%;
-  --border: 220 42% 16%;
-  --input: 220 42% 16%;
-  --ring: 217 80% 55%;
+  /* #012a5e */
+  --border: 214 97% 18%;
+  --input: 214 97% 18%;
+  /* #0066ff */
+  --ring: 220 100% 50%;
 }
 
 @theme inline {
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-  /* Luzion brand palette */
-  --color-luzion-navy: #0A1628;
-  --color-luzion-white: #F5F8FF;
-  --color-luzion-steel: #8AACCC;
-  --color-luzion-slate: #1A2D42;
-  --color-luzion-midnight: #0D1B2E;
-  --color-luzion-accent: #2563EB;
-  --color-luzion-accent-light: #60A5FA;
+  /* Luzion brand palette — matched to original site */
+  --color-luzion-navy: #011834;
+  --color-luzion-deep: #012147;
+  --color-luzion-slate: #012a5e;
+  --color-luzion-midnight: #013467;
+  --color-luzion-accent: #0066ff;
+  --color-luzion-accent-light: #4fa7ff;
+  --color-luzion-sky: #6ec0ff;
+  --color-luzion-white: #cfe6ff;
+  --color-luzion-muted: #7aafff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 222 60% 5%;
-    --foreground: 215 25% 93%;
+    --background: 213 97% 10%;
+    --foreground: 210 100% 91%;
   }
 }
 

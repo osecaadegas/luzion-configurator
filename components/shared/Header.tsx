@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils/cn";
 import { Button } from "@/components/ui/button";
@@ -23,9 +24,14 @@ export function Header() {
           className="flex items-center gap-2 group"
           aria-label="Luzion Home"
         >
-          <span className="text-xl font-semibold tracking-[0.15em] uppercase text-foreground">
-            LUZION
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Luzion"
+            width={120}
+            height={36}
+            className="h-9 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Primary navigation */}

@@ -50,15 +50,17 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Luzion brand colors
+        // Luzion brand colors — matched to original site
         luzion: {
-          navy: "#0A1628",        // deep midnight navy
-          white: "#F5F8FF",        // cool blue-tinted white
-          steel: "#8AACCC",        // mid steel blue
-          slate: "#1A2D42",        // dark slate blue
-          midnight: "#0D1B2E",     // deepest midnight
-          accent: "#2563EB",       // brand electric blue
-          "accent-light": "#60A5FA", // sky blue
+          navy: "#011834",         // bg-primary deep navy
+          deep: "#012147",         // bg-secondary navy
+          slate: "#012a5e",        // mid blue
+          midnight: "#013467",     // dark accent
+          accent: "#0066ff",       // electric blue
+          "accent-light": "#4fa7ff", // sky blue
+          sky: "#6ec0ff",          // link hover / gradient end
+          white: "#cfe6ff",        // text secondary
+          muted: "#7aafff",        // muted text
         },
       },
       fontFamily: {

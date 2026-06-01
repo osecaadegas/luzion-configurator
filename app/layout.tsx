@@ -36,7 +36,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1, // Prevent double-tap zoom on kiosk/tablet
-  themeColor: "#040D1A",
+  themeColor: "#011834",
 };
 
 export default function RootLayout({

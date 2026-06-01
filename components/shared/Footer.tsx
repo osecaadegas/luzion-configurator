@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 
 export function Footer() {
@@ -8,7 +9,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <span className="text-lg font-semibold tracking-[0.15em] uppercase">LUZION</span>
+            <Image
+              src="/logo.png"
+              alt="Luzion"
+              width={110}
+              height={34}
+              className="h-8 w-auto object-contain mb-3"
+            />
             <p className="mt-2 text-sm text-muted-foreground max-w-xs">
               Redefining urban mobility through premium electric microcars.
             </p>
