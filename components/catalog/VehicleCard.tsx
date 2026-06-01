@@ -4,6 +4,7 @@ import type { Vehicle } from "@/lib/types";
 import { formatPrice, formatSpec } from "@/lib/utils/format";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Navigation } from "lucide-react";
+import { QuoteButton } from "./QuoteButton";
 
 interface VehicleCardProps {
   vehicle: Vehicle;
@@ -98,13 +99,14 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
         )}
 
         {/* CTA */}
-        <div className="mt-auto pt-2">
+        <div className="mt-auto pt-2 flex flex-col gap-2">
           <Button asChild size="lg" className="w-full touch-target">
             <Link href={`/configure/${vehicle.id}`}>
               Configure
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
+          <QuoteButton vehicleName={`${vehicle.name} ${vehicle.model}`} />
         </div>
       </div>
     </article>
