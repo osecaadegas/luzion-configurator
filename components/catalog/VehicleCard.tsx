@@ -31,11 +31,13 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-            <span className="text-4xl font-light tracking-widest uppercase text-muted-foreground/30">
-              {vehicle.name}
-            </span>
-          </div>
+          <Image
+            src="/images/vehicles/luzion-exterior.png"
+            alt={`${vehicle.name} ${vehicle.model}`}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         )}
         {/* Price badge overlay */}
         <div className="absolute bottom-3 right-3 bg-background/90 backdrop-blur-sm rounded px-3 py-1.5">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -23,39 +24,52 @@ export function HeroSection() {
       />
 
       <div className="container relative z-10">
-        <div className="max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-luzion-muted mb-6">
-            Premium Urban Mobility
-          </p>
-          <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight mb-6">
-            Configure
-            <br />
-            <span
-              className="font-semibold"
-              style={{ background: "linear-gradient(90deg, #4fa7ff 0%, #6ec0ff 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
-            >
-              Your Luzion
-            </span>
-          </h1>
-          <p className="text-lg md:text-xl text-luzion-white max-w-xl leading-relaxed mb-10">
-            Personalise every detail of your microcar. Choose your colour, wheels,
-            and interior to create the perfect vehicle for your city.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Button
-              asChild
-              size="xl"
-              className="text-white font-semibold touch-target border-0"
-              style={{ background: "linear-gradient(90deg, #0066ff, #4fa7ff)" }}
-            >
-              <Link href="#models">
-                Explore Models
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button asChild size="xl" variant="outline" className="border-[#4fa7ff]/40 text-[#4fa7ff] hover:bg-[#4fa7ff]/10 hover:text-[#6ec0ff] hover:border-[#4fa7ff]/70 touch-target">
-              <Link href="/compare">Compare Models</Link>
-            </Button>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-center">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.3em] text-luzion-muted mb-6">
+              Premium Urban Mobility
+            </p>
+            <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight mb-6">
+              Configure
+              <br />
+              <span
+                className="font-semibold"
+                style={{ background: "linear-gradient(90deg, #4fa7ff 0%, #6ec0ff 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+              >
+                Your Luzion
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-luzion-white max-w-xl leading-relaxed mb-10">
+              Personalise every detail of your microcar. Choose your colour, wheels,
+              and interior to create the perfect vehicle for your city.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button
+                asChild
+                size="xl"
+                className="text-white font-semibold touch-target border-0"
+                style={{ background: "linear-gradient(90deg, #0066ff, #4fa7ff)" }}
+              >
+                <Link href="#models">
+                  Explore Models
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild size="xl" variant="outline" className="border-[#4fa7ff]/40 text-[#4fa7ff] hover:bg-[#4fa7ff]/10 hover:text-[#6ec0ff] hover:border-[#4fa7ff]/70 touch-target">
+                <Link href="/compare">Compare Models</Link>
+              </Button>
+            </div>
+          </div>
+
+          <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
+            <Image
+              src="/images/hero/hero-street.png"
+              alt="Luzion microcar on a city street"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 1024px) 100vw, 440px"
+            />
           </div>
         </div>
       </div>
